@@ -1,0 +1,28 @@
+
+mixin colorsList(colors__list,colorName,boxColor)
+    li.colors__item
+        div(class="colors__box_"+boxColor)
+        p.colors__Names !{colors__list}<br/> <em>!{colorName}</em> 
+
+mixin typeList(textElement,description)
+    li.type__item
+        p(class="type__item_textElement"+textElement)=textElement
+        p(class="type__item_description"+textElement)=description
+         
+section.colorsAndType
+    ul.colors
+        +colorsList("Dark Shade 100%","#1F2041","DarkShade100")
+        +colorsList("Dark Shade 75%","#1F2041","DarkShade75")
+        +colorsList("Dark Shade 50%","#1F2041","DarkShade50")
+        +colorsList("Dark Shade 25%","#1F2041","DarkShade25")
+        +colorsList("Dark Shade 5%"," #1F2041","DarkShade5")
+        +colorsList("Purple","#BC9CFF","Purple")
+        +colorsList("Green","#6FCF97","Green")
+
+
+
+    ul.type
+        +typeList("h1",`This one is the sub-section or widget title`)
+        +typeList("h2","Next one is the item title inside widgets")
+        +typeList("h3","This is a label or CTA text")
+        +typeList("body","This is the body text which is used for most of the design, like paragraphs, lists, etc.")

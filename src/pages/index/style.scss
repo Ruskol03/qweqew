@@ -1,8 +1,17 @@
+@import "./../../components/fonts.scss";
+@import "../../components/drop.scss";
 
 
+
+
+*{
+  box-sizing: border-box;
+}
 body {
-  padding-left: 150px;
-  padding-top: 145px;
-  padding-right: 191px;
-  padding-bottom: 145px;
+  
+    height: 830px;
+    padding-left: 150px;
+    padding-top: 145px;
+    padding-right: 191px;
+    padding-bottom: 145px;
 }

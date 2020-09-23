@@ -4,9 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const paths = {
     src: path.join(__dirname,'src'),
+    dist: path.join(__dirname,'dist'),
 }
 const PAGES_DIR = `${paths.src}/pages/index`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
+
 
 module.exports={
     mode: 'development',
@@ -14,13 +16,21 @@ module.exports={
         "index": paths.src + '/pages/index/index.js' ,
         
     }, 
+    devServer: {
+        
+        
+        port: 9000
+    },
    
     plugins: [
         new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
         ...PAGES.map(page => new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,
+            filename: `./${page.replace(/\.pug/,'.html')}`
+             
             
           })),
+          
        
     ],
     module: {
@@ -37,12 +47,16 @@ module.exports={
             {
                 test: /\.pug$/,
                 loader: 'pug-loader'
-              }
+            },
+            {
+                test: /\.(ttf|svg|woff)$/,
+                use: ["file-loader"]
+            }
         ],
     },
     output: {
       
-        filename: '[name].bundle.js',
+        filename: '[name].[contenthash].bundle.js',
        
         path: path.resolve(__dirname, 'dist'),
         

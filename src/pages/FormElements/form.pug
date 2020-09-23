@@ -1,0 +1,16 @@
+mixin textfield(textlabel,placeholder,defaultValue)
+    form.form
+        
+        label.form__label(for="text")=textlabel
+            p.form__default=defaultValue
+        input.form__input(type="text" id="text" placeholder=placeholder) 
+
+     
++textfield("Text Field","Email","default")
++textfield("Text Field","This is pretty awesome","hover / focus")
+
+select(class="js-example-basic-single" name="state")
+    option(value="AL")="Alabama"
+    
+   
+
