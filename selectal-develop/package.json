@@ -1,0 +1,48 @@
+{
+    "name": "selectal",
+    "version": "1.4.1",
+    "description": "A lightweight, no-jQuery, highly customizable select element styling solution.",
+    "main": "./dist/selectal.min.js",
+    "style": "./dist/selectal.min.css",
+    "files": [
+        "src/*.css",
+        "src/*.js",
+        "dist"
+    ],
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": "^1.0.4",
+        "grunt-contrib-cssmin": "*",
+        "grunt-contrib-qunit": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-uglify": "*",
+        "matchdep": "*"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Kovee98/selectal.git"
+    },
+    "keywords": [
+        "selectal",
+        "select",
+        "NoJQuery",
+        "nojquery",
+        "vanilla",
+        "js",
+        "javascript",
+        "lightweight",
+        "simple",
+        "easy",
+        "customizable",
+        "customizability"
+    ],
+    "author": "Joshua Kovalchik",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Kovee98/selectal/issues"
+    },
+    "homepage": "https://www.selectal.org"
+}

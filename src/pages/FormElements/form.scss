@@ -31,7 +31,7 @@
     }
 
 
-    &__input {
+    &__input{
         @include body;
         color:$DarkShade75;
         font-size: 14px;
@@ -64,3 +64,4 @@
     }
   
 }
+
