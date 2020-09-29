@@ -1,0 +1,62 @@
+@import "../../components/mixins.scss";
+@import "../../components/variables.scss";
+
+
+.form__radio{
+    position: relative;
+    &__input{
+        appearance: none;
+        position: absolute;
+    }
+    &__label{
+        @include body;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        padding-left: 25px;
+        margin-right: 0;
+        margin-top: 16px;
+        margin-right: 20px;
+        color:$DarkShade50;
+        
+        user-select: none;
+
+        &::after{
+            opacity: 0;
+            content: "";
+            display: inline-block;
+            position: absolute;
+            left:4.3px;
+            bottom: 5.2px;    
+            border-radius: 10px;
+            background: $Gradient;
+            width:12px;
+            height: 12px;
+            
+        }
+        &::before{
+            content: "";
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            bottom: 1px;    
+            border-radius: 10px;
+            background: #FFFFFF;
+            width: 18px;
+            height: 18px;
+            border: 1px solid $DarkShade25;
+            
+        
+        }
+    }
+}
+
+.form__radio__input:checked + .form__radio__label::before {
+	border: 1px solid $Purple;
+}
+.form__radio__input:checked + .form__radio__label::after {
+	opacity: 1;
+}
+.form__radio__input:checked + .form__radio__label{
+	color:$DarkShade75;
+}

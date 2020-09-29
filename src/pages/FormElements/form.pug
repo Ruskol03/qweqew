@@ -1,11 +1,73 @@
-mixin textfield(textlabel,placeholder,defaultValue)
-    form.form
+include ../../components/mixinForms.pug
+include ../../components/mixinForms.pug
+.wrappper
+    .formSection
         
-        label.form__label(for="text")=textlabel
-            p.form__default=defaultValue
-        input.form__input(type="text" id="text" placeholder=placeholder) 
+        +textfield("Text Field","Email","default")
+        +textfield("Text Field","This is pretty awesome","hover / focus")
+        +dropDown("dropdown","default","1","2")
+        +masked("masked text field")
+        +dateDropdown("date dropdown")
+        +filterDate("filter date dropdown")
+        +subscriptionTextField("subscription text field","Email")
 
+
+    .wrapperCheck
+       
+        .checkboxSection
+            +Checkbox
+                
+        .checkboxSection
+            +radio
+        .checkboxSection
+            +toggle
+                
+        .checkboxSection
+            +likeButton
+        .checkboxSection
+            p.form__label="rate button"
+            div(class="rate__wrap")
+                +rate("a","1")
+                +rate("b","2")
+    .wrapperButtons
+        p
+            label(for="amount")="Price range"
+            input(type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold")
+
+ 
+        div(id="slider-range")
+           
+                
+                          
+                    
+
+                                
+               
+
+
+
+                    
+               
+         
+                
      
-+textfield("Text Field","Email","default")
-+textfield("Text Field","This is pretty awesome","hover / focus")
+                
+            
+                
+            
+           
 
+
+                
+
+
+
+
+
+
+
+
+
+        
+
+                

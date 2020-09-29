@@ -1,0 +1,76 @@
+@import "../../components/mixins.scss";
+@import "../../components/variables.scss";
+.rate__wrap{
+  display: flex;
+}
+.rate {
+  &_mr{
+    margin-right: 20px;
+  }
+ 
+
+ 
+  .rating-group {
+    display: inline-flex;
+  }
+  
+
+  .rating__icon {
+    pointer-events: none;
+   
+    width: 26px;
+    height: 25px;
+    
+  
+    background: $Gradient;  
+    mask: url("../../assets/star_border-24px.svg") no-repeat;
+    -webkit-mask:url("../../assets/star_border-24px.svg") no-repeat;
+    -webkit-mask-size: 24px;
+    
+  }
+  
+  
+  .rating__input {
+   position: absolute !important;
+   left: -9999px !important;
+  }
+
+ 
+  .rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    
+    width: 5  0px;
+  }
+  
+ 
+  .rating__icon--star {
+    background: $Gradient;  
+    mask: url("../../assets/star-24px.svg") no-repeat;
+    -webkit-mask:url("../../assets/star-24px.svg") no-repeat;
+    -webkit-mask-size: 30px;;
+  
+  }
+  
+ 
+ 
+
+  .rating__input--none:checked + .rating__label .rating__icon--none {
+    background: $Gradient;  
+    mask: url("../../assets/star-24px.svg") no-repeat;
+    -webkit-mask:url("../../assets/star-24px.svg") no-repeat;
+    -webkit-mask-size: 30px;;
+   
+  }
+
+ 
+  .rating__input:checked ~ .rating__label .rating__icon--star {
+    background: $Gradient;  
+    mask: url("../../assets/star_border-24px.svg") no-repeat;
+    -webkit-mask:url("../../assets/star_border-24px.svg") no-repeat;
+    -webkit-mask-size: 30px;
+  }
+
+  
+}
+

@@ -1,0 +1,80 @@
+@import "../../components/mixins.scss";
+@import "../../components/variables.scss";
+
+.form__toggle{
+    &__inwrap{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        margin-top: 10px;
+    
+    }
+    &__switch {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+        margin-right: 10px;
+      }
+    &__input {display:none;}
+    &__wrap{
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        align-items: baseline;
+        margin-top: 15px;
+    }
+    &__label{
+        @include body;
+    }
+    &__slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: white;
+        border: 1px solid $DarkShade25;
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 34px;
+        
+        width: 40px;
+      }
+    &__slider:before {
+        position: absolute;
+        content: "";
+        width: 12px;
+        height: 12px;
+        left: 4px;
+        bottom: 3px;
+        background:$DarkShade25;
+        
+        -webkit-transition: .6s;
+        transition: .6s;
+        border-radius: 50%;
+      }
+    
+}
+
+
+
+
+
+
+
+
+
+.form__toggle__input:checked + .form__toggle__slider {
+    border: 1px solid $Purple;
+  }
+
+.form__toggle__input:checked + .form__toggle__slider:before {
+    background: $Gradient;
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+  }
+
+ 

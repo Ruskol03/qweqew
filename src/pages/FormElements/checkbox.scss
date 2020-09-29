@@ -1,0 +1,118 @@
+@import "../../components/mixins.scss";
+@import "../../components/variables.scss";
+.checkboxSection{
+    &:nth-child(n+2){
+        margin-top: 50px;
+    }
+    
+}
+.wrapperCheck{
+    margin-left: 126px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form__checkBox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   position: relative;
+    
+    &__input{
+        
+       position: absolute;
+        appearance: none;
+        
+    }
+    
+    &__label{
+        @include body;
+        margin-top: 16px;
+        width: 240px;
+        line-height: 18px;
+        &:nth-child(n+4){
+            margin-top: 17px;
+        }
+        padding-left: 29.74px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content:flex-end;
+        align-items: baseline;
+        
+        height: 14px;
+        color: $DarkShade50;
+        &::after{
+            position: absolute;
+            
+            left: 0;
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            left: 0;
+            
+            
+            
+            background: #FFFFFF;
+           
+            z-index: 1;
+            border:  1px solid $DarkShade25;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+        &::before{  
+            
+            content: "";
+            position: absolute;
+            
+            left: 0;
+            width: 20px;
+            height: 20px;
+            
+            opacity: 0;
+            
+            display: block;
+            
+           
+           
+           
+            
+            box-sizing: border-box;
+            border-radius: 4px;
+            z-index: 2;
+        }
+
+        
+      
+        
+       
+       
+       
+        
+        
+       
+    }
+    
+}
+
+.form__checkBox__input:checked + .form__checkBox__label::before {
+    opacity: 1;
+    
+    border: 1px solid $Purple;
+    
+    
+   
+    
+    
+}
+.form__checkBox__input:checked + .form__checkBox__label::after{
+    
+    border: 1px solid $Purple;
+    background: $Gradient;  
+    
+    mask: url("../../assets/check-solid.svg") no-repeat;
+    -webkit-mask:url("../../assets/check-solid.svg") no-repeat;
+   -webkit-mask-size: 10px;
+   -webkit-mask-position: center;
+} 
+

@@ -1,7 +1,7 @@
 
 @import "./../../components/fonts.scss";
 @import "../../components/drop.scss";
-
+@import "https://pro.fontawesome.com/releases/v5.10.0/css/all.css" ;
 
 
 
@@ -18,58 +18,3 @@ body {
 }
 
 
-.select{
-  width: 250px;
-  margin: 0 auto;
-  position: relative;
-
-  &__header{
-    display: flex;
-    border: 1px solid saddlebrown;
-    cursor: pointer;
-   
-  }
-  &__current{
-    font-size: 18px;
-    line-height: 24px;
-    padding: 8px;
-    
-  }
-  &__icon{
-    align-items: center;
-    display: flex;
-    flex-shrink: 0;
-    justify-content: center;
-    margin-left: auto;
-    height: 40px;
-    text-align: center;
-    width: 40px;
-  }
-  &__body{
-    border: 1px solid saddlebrown;
-    border-top: 0;
-    position: absolute;
-    display: none;
-    left: 0;
-    right: 0;
-    top:100%;
-  }
-  &__item{
-    line-height: 24px;
-    padding: 8px;
-    font-size: 16px;
-    &:hover{
-      background-color: aqua;
-    }
-  }
-  
-
-  
-}
-.is-active{
-  .select{
-    &__body{
-      display: block;
-    }
-  }
-}

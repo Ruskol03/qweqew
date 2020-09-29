@@ -1,37 +1,12 @@
 @import "../../components/mixins.scss";
 @import "../../components/variables.scss";
-
-
-
-
-.form {
-    &:nth-child(n+1){
-        margin-top: 20.44px;
-    }
-    
-    width: 320px;
-
-    &__label {
-        display: flex;
-        justify-content: space-between;
-
-    width: 320px;
-        @include h3;
-        line-height: 14px;
-        height: 14px;
-    }
-    &__default {
-        @include body;
-        text-transform: uppercase;
-        font-size: 12px;
-        line-height: 15px;
-        color: $DarkShade50;
-        margin-top: 0;
-        margin-bottom: 0px;
-    }
-
-
-    &__input{
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css);
+@import "./checkbox.scss";
+@import "./radio.scss";
+@import "./toggle.scss";
+@import "./likeButton.scss";
+@import "./rate.scss";
+@mixin input{
         @include body;
         color:$DarkShade75;
         font-size: 14px;
@@ -39,13 +14,38 @@
         margin-top: 5px;
         width: 320px;
         height: 44px;
-        padding-left: 15px;
+        padding-left: 14px;
         padding-top: 13px;
-        padding-bottom: 13px;
+        padding-bottom: 15px;
         padding-right: 15px;
         border: 1px solid $DarkShade25;
         border-radius: 4px;
+        letter-spacing: 0px;
+}
+@mixin flexCenter{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+.wrappper{
+    display: flex;
+}
 
+.formSection,.wrapperButtons{
+    width: 320px;
+    display: inline-block;
+}
+
+.form {
+    
+        
+    &__input, .selectalGroup{
+        outline: none;
+        @include input;
+        &_filterDate{
+            width: 266px;
+        }
+        
         &::placeholder {
             @include body;
             
@@ -62,6 +62,271 @@
             
         }
     }
+    &__wrap__subsc{
+        @include flexCenter;
+        width: 267px;
+        align-items: center;
+        padding-top: 16px;
+        border: 1px solid $DarkShade25;
+        border-radius: 4px;
+        margin-top: 5px;
+        
+        
+    }
+        
+        
+       
+        
+        
+        
+        
+       
+      
+        
+        
+        
+   
   
+    &__date__wrap{
+       
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $DarkShade25;
+        border-radius: 4px;
+        height: 44px;
+        width: 150px;
+        margin-top: 5px;
+        &__input{
+            
+            @include input;
+            width: 108px;
+            margin-top: 0px;
+            background: none;
+            border: none;
+            outline: none;
+            
+        }
+    }
+    
+   
+    &__default {
+        @include body;
+        text-transform: uppercase;
+        font-size: 12px;
+        line-height: 15px;
+        color: $DarkShade50;
+        margin-top: 0;
+        margin-bottom: 0px;
+    }
+ 
+        
+        
+        
+        
+        
+        
+        
+       
+        
+        
+        
+        
+        
+        
+    &__sub{
+        @include input;
+        width: 223px;
+        border: none;
+        
+        margin-top: 0;
+        height: 41px;
+        outline: none;
+        
+    }
+        
+   
+       
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    &__submitBtn{
+       @include flexCenter;
+        
+       cursor: pointer;
+        width: 44px;
+        border: none;
+        border-radius: 4px;
+        height: 41px;
+        margin-top: 0px;
+        border-left: none;
+        background: $Gradient;
+        padding: 0;
+        
+        i{
+            font-weight: 400;
+            font-size: 24px;
+           padding: 10px;
+            mix-blend-mode: screen;
+            background: white;
+            height: 100%;
+            width: 100%;
+        }
+        
+        
+    
+    }
+    &:nth-child(n+2){
+        margin-top: 20.44px;
+    }
+    
+    width: 320px;
+
+    &__label {
+        display: flex;
+        justify-content: space-between;
+        line-height: 15px;
+        width: 320px;
+        @include h3;
+        &_date{
+            width: 150px;
+        }
+        
+        
+
+    }
+    &__arrow_date{
+        transform: rotate(0deg);
+        position: relative;
+        transition: all 0.5s;
+    }
+    &__arrow_date_up{
+        
+        transform: rotate(180deg);
+    }
+    
+
+    &__datedrop{
+        display: flex;
+        justify-content: space-between;
+
+    }
+ 
+    &__selectGroup{
+       
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        display: inline-block;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        
+        
+    
+        
+    }
+    &__dropdown{
+        position: absolute;
+        background-color: #fff;
+        cursor: pointer;
+        border: .5px solid #d3d3d3;
+        &__option {
+            margin: 0;
+            padding: 5px;
+            &:hover{
+                color: #fff;
+                background: #39f;
+            }
+            
+            
+        }
+        &__option:first-child{
+            border-top: 0;
+        }
+        &__option:last-child{
+            border-bottom: 0;
+        }
+    }
+    &__selectal__btn{
+        cursor: pointer;
+        width: 100%;
+        height: 44px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 14px;
+        padding-bottom: 5px;
+        p{
+            padding: 0;
+        }
+       
+        span{
+            padding: 0px;
+            outline: .5px solid transparent;
+            border: .5px solid transparent;
+        }
+    }
+    &__select__item{
+    
+        padding-top: 12px;
+        @include flexCenter;
+        
+    }
+    
+    &__arrow_down , &__arrow_up{
+        padding: 0;
+        height: 42px;
+        width: 44px;
+    }
+    &__arrow_down::after {
+        font-family: FontAwesome;
+        content: "\f107";
+        font-size: 20px;
+        color:$DarkShade50;
+        width: 44px;
+        @include flexCenter;
+        height: 42px;
+        
+    }
+    &__arrow_up::after {
+        content: "\f106";
+        font-family: FontAwesome;
+        font-size: 24px;
+        color:$DarkShade50;
+        width: 44px;
+        @include flexCenter;
+        
+    }
+    #selectGroup{
+        padding: 0;
+        font-size: 14px;
+        line-height: 24px;
+        display: flex;
+        height: 44px;
+        
+    }
+ 
+   
+
+   
+ 
+  
+}
+
+
+.selectal-hidden {
+    visibility: hidden
 }
 

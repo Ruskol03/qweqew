@@ -1,0 +1,123 @@
+mixin textfield(textlabel,placeholder,defaultValue)
+    form.form
+        
+        label.form__label(for="text")=textlabel
+            p.form__default=defaultValue
+        input.form__input(type="text" id="text" placeholder=placeholder) 
+mixin dateDropdown(textlabel)
+    div(class="form form__datedrop ")
+        
+        .form__wrapDate 
+               
+            input( type="text" id="daterange") 
+            
+            
+            label(class="form__label_date form__label" for="rangeFrom")=textlabel
+            div(class=" form__input form__date__wrap ")
+                span(class="form__arrow_down form__arrow_date")
+                input(class="form__date__wrap__input" type="text" id="rangeFrom" ) 
+
+        .form__wrapDate
+            label(class="form__label_date form__label" for="rangeFrom")=textlabel
+            div(class=" form__input form__date__wrap ")  
+                span(class="form__arrow_down form__arrow_date") 
+                input(class="form__date__wrap__input" type="text" id="rangeTo") 
+mixin filterDate(textlabel)
+    .form     
+        label(class="form__label" for="my-select")=textlabel
+                
+        input(class="form__input form__input_filterDate" id="range" value="") 
+mixin dropDown(textlabel,defaultValue,...items) 
+    
+    form.form
+        label(class="form__label" for="my-select")=textlabel
+            p.form__default=defaultValue
+        
+        select(id="my-select")
+            option(value=item)="Сколько гостей"
+            each item in items
+                option(value=item)=item
+mixin masked(textlabel)
+    form.form     
+        label(class="form__label" for="my-select")=textlabel    
+            
+            p.form__default="Default"      
+        input(class="form__input form__masked" placeholder="ДД.ММ.ГГГГ" value="")  
+        
+mixin subscriptionTextField(textlabel,placeholder)
+    form.form
+        
+        label.form__label(for="text")=textlabel
+        div(class=" form__input form__wrap__subsc ")    
+            input(class="form__sub" type="text" id="text" placeholder=placeholder) 
+            button(type="submit" value="" class="form__submitBtn")
+                <i class="fas fa-arrow-right"></i>
+
+mixin Checkbox
+    form.form__checkBox
+        p.form__label="Checkbox Buttons"
+        input(type="checkbox" class="form__checkBox__input" id="smoke")
+            
+        label(for="smoke" class="form__checkBox__label")="Можно курить"
+        
+
+        input(type="checkbox" class="form__checkBox__input" id="pet")
+        label(for="pet" class="form__checkBox__label")="Можно с питомцами"
+        
+        input(type="checkbox" class="form__checkBox__input" id="guests")
+        label(for="guests" class="form__checkBox__label")="Можно пригласить гостей (до 10 человек)"
+mixin radio
+    form.form__radio
+        p.form__label="Radio Buttons"
+        input(type="radio" name="sex" class="form__radio__input" id="men")
+        label(for="men" class="form__radio__label")="Мужчина"
+            
+        input(type="radio" name="sex" class="form__radio__input" id="women")
+        label(for="women" class="form__radio__label")="Женщина"
+    
+mixin toggle
+    from.form__toggle
+        p.form__label="Toggle"
+        .form__toggle__wrap
+            .form__toggle__inwrap
+                p.form__toggle__label="Получать спецпредложения"
+                label(class="form__toggle__switch ")
+                    input(class="form__toggle__input" type="checkbox")
+                    span(class="form__toggle__slider ")
+                    
+            .form__toggle__inwrap
+                p.form__toggle__label="Получать спецпредложения"
+                label(class="form__toggle__switch ")
+                    input(class="form__toggle__input" type="checkbox")
+                    span(class="form__toggle__slider ")
+mixin likeButton
+    p.form__label="like button"
+    .likeButton
+    
+        button(class="likeButton__like likeButton__like_no")
+            <i class="far fa-heart"></i>
+            p.likeButton__num="2 "
+        button(class="likeButton__like ")
+            div.likeButton__like_yes
+            p.likeButton__num="12"
+mixin rate(id,name)
+    div(class="rate rate_mr")
+
+        div(class="rating-group")
+            label(aria-label="1 star" class="rating__label" for=`${id}1`)
+                div(class="rating__icon rating__icon--star ")
+            input(class="rating__input" name=name id=`${id}1` value="1" type="radio")
+            
+            label(aria-label="2 stars" class="rating__label" for=`${id}2`)
+                div(class="rating__icon rating__icon--star ")
+            input(class="rating__input" name=name id=`${id}2` value="2" type="radio")
+            label(aria-label="3 stars" class="rating__label" for=`${id}3`)
+                div(class="rating__icon rating__icon--star ")
+            input(class="rating__input" name=name id=`${id}3` value="3" type="radio" checked)
+            label(aria-label="4 stars" class="rating__label" for=`${id}4`)
+                div(class="rating__icon rating__icon--star ")
+            input(class="rating__input" name=name id=`${id}4` value="4" type="radio")
+            label(aria-label="5 stars" class="rating__label" for=`${id}5`)
+                div(class="rating__icon rating__icon--star ")
+            input(class="rating__input" name=name id=`${id}5` value="5" type="radio")
+        
