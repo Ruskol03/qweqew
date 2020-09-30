@@ -120,4 +120,18 @@ mixin rate(id,name)
             label(aria-label="5 stars" class="rating__label" for=`${id}5`)
                 div(class="rating__icon rating__icon--star ")
             input(class="rating__input" name=name id=`${id}5` value="5" type="radio")
-        
+mixin slider
+    p(class="form__label form__label_w266")="Range Slider"
+        span(id="slider__span" class="form__default")
+    
+    div(id="slider")
+    span(class="example-val" id="lowerValue")
+    span(class="example-val" id="upperValue")  
+
+
+mixin buttonFilled
+    button(class="button button_filled")="CLICK ME"
+mixin buttonRegular
+    button(class="button button_regular")="CLICK ME"
+mixin buttonEase
+    button(class="button button_ease ")="CLICK ME"

@@ -1,4 +1,4 @@
-include ../../components/mixinForms.pug
+
 include ../../components/mixinForms.pug
 .wrappper
     .formSection
@@ -30,14 +30,30 @@ include ../../components/mixinForms.pug
                 +rate("a","1")
                 +rate("b","2")
     .wrapperButtons
-        p
-            label(for="amount")="Price range"
-            input(type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold")
-
- 
-        div(id="slider-range")
-           
+        +slider 
+        .checkboxSection
+            p.form__label="buttons"
+            .wrapButton
+                .wrapOne
+                    +buttonFilled
+                    button(class="button button_filled button_active")="CLICK ME"
+                .wrapOne    
+                    +buttonRegular   
+                    button(class="button button_regular button_active_reg")="CLICK ME"
+                .wrapOne
+                    +buttonEase
+                    button(class="button button_ease button_active_ease ")="CLICK ME"
+                .wrapOne
+                    button(class="button button_filled button_filled_long ")="перейти к оплате "
+                        div(class="button__arrow")
                 
+        
+               
+                    
+
+                
+
+          
                           
                     
 

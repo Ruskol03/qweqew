@@ -6,8 +6,10 @@ import "./rangeSlider"
 import "../../../material-date-range-picker/dist/duDatepicker.min.js" 
 import "../../../material-date-range-picker/dist/duDatepicker-theme.scss"
 import "../../../material-date-range-picker/dist/duDatepicker.min.scss"  
+
 let Selectal = require("../../../selectal-develop/dist/selectal.min.js")
 let duDatepicker =require("../../../material-date-range-picker/dist/duDatepicker.min.js" )
+let noUiSlider = require("../../../node_modules/nouislider/distribute/nouislider")
 duDatepicker('#daterange',{
     inline: true, 
    range:true,
@@ -64,4 +66,35 @@ duDatepicker('#daterange',{
  })
 let mySelectal = new Selectal('#my-select');
 
+
+
+
+
+
+var slider = document.getElementById('slider');
+
+noUiSlider.create(slider, {
+    start: [5000, 10000],
+    connect: true,
+    range: {
+        'min': 1000,
+        'max': 13000
+    },
+   
+});
+
+var nodes = [
+  document.getElementById('lowerValue'), // 0
+  document.getElementById('upperValue')  // 1
+];
+
+// Display the slider value and how far the handle moved
+// from the left edge of the slider.
+slider.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
+ 
+  nodes[handle].innerHTML = Math.round(values[handle]/1000) ;
+
+  let slider__span =document.getElementById("slider__span");
+  slider__span.textContent = `${nodes[0].textContent} 000р - ${nodes[1].textContent} 000р`;
+});
 
