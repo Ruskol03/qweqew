@@ -39,21 +39,15 @@ module.exports={
           new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
-            "window.jQuery": "jquery'",
-            "window.$": "jquery"
+            jquery:'jquery',
+            'window.jQuery' : 'jquery',
+            "window.$": 'jquery'
           })
           
           
        
     ],
-    resolve : {
-        alias: {
-          // bind version of jquery-ui
-          "jquery-ui": "jquery-ui/jquery-ui.js",      
-          // bind to modules;
-          modules: path.join(__dirname, "node_modules"),
-        }
-    },
+   
     module: {
         rules: [
             {

@@ -18,16 +18,7 @@
     @include h3;
     cursor: pointer;
     &__arrow{
-        height: 25px;
-        width: 25px;
-        position: absolute;
-        background: white;
-        mask: url("../../assets/arrow-right-solid.svg") no-repeat;
-        -webkit-mask:url("../../assets/arrow-right-solid.svg") no-repeat;
-        -webkit-mask-size: 24px;
-
-        right: 10px;
-        top: 7.5px;
+       
     }
     &_ease{
         border: none;
@@ -91,20 +82,18 @@
             position: relative;
             width: 320px;
             height: 44px;
-            // &::before{
-            //     content: "";
-            //     position: absolute;
-            //     background-image: url("../../assets/arrow-right-solid.svg");
-            //     background-repeat: no-repeat;
-            //     height: 10px;
-            //     width: 10px;
-            //     right: 0;
-            //     color:white;
+            &_right{
+                background-color: #fff;
+                -webkit-mask: url("../../assets/arrow_forward-24px.svg");
+                height: 20px;
+                width: 20px;
+                position:absolute;
+                z-index: 1;
+                right: 0.7em;
+                top: 0.8em;
                 
 
-                
-                
-            // }
+            }
         }
 
        

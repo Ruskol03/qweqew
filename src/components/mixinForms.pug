@@ -27,16 +27,16 @@ mixin filterDate(textlabel)
         label(class="form__label" for="my-select")=textlabel
                 
         input(class="form__input form__input_filterDate" id="range" value="") 
-mixin dropDown(textlabel,defaultValue,...items) 
+mixin dropDown(textlabel,defaultValue,id,nameOfclass,...items) 
     
-    form.form
+    form(class=nameOfclass)
         label(class="form__label" for="my-select")=textlabel
             p.form__default=defaultValue
         
-        select(id="my-select")
-            option(value=item)="Сколько гостей"
+        select(id=id)
+            option(value=item)="2 спальни, 2 кровати..."
             each item in items
-                option(value=item)=item
+                option(value=item )=item
 mixin masked(textlabel)
     form.form     
         label(class="form__label" for="my-select")=textlabel    

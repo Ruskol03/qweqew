@@ -6,7 +6,9 @@ import "./rangeSlider"
 import "../../../material-date-range-picker/dist/duDatepicker.min.js" 
 import "../../../material-date-range-picker/dist/duDatepicker-theme.scss"
 import "../../../material-date-range-picker/dist/duDatepicker.min.scss"  
-
+import "../FormElements/paginator"
+import "./dropDwonBad"
+// import "../FormElements/paginator2.js"
 let Selectal = require("../../../selectal-develop/dist/selectal.min.js")
 let duDatepicker =require("../../../material-date-range-picker/dist/duDatepicker.min.js" )
 let noUiSlider = require("../../../node_modules/nouislider/distribute/nouislider")
@@ -65,6 +67,11 @@ duDatepicker('#daterange',{
 
  })
 let mySelectal = new Selectal('#my-select');
+let selectF =()=>{
+  let mySelectal2 = new Selectal('#my-select2');
+}
+setTimeout(()=>selectF(),10);
+
 
 
 
@@ -98,3 +105,48 @@ slider.noUiSlider.on('update', function (values, handle, unencoded, isTap, posit
   slider__span.textContent = `${nodes[0].textContent} 000р - ${nodes[1].textContent} 000р`;
 });
 
+
+
+;
+$(function() {
+  $('#demo').pagination({
+      items: 180,
+      itemsOnPage: 12,
+      cssStyle: 'light-theme',
+      pages:15,
+
+      displayedPages:3,
+      edges:1,
+      ellipsePageSet:false,
+      
+  })
+ 
+})
+
+let raginatorNavigate = document.querySelector("#paginatorNavigate");
+
+
+
+
+let a = () =>{
+    
+  
+  let current = document.querySelector(".current")
+  if(Number(current.textContent)==1){
+    raginatorNavigate.textContent = `${current.textContent} - ${Number(current.textContent) + 11} из 100+ вариантов аренды` ;
+  }else{
+    raginatorNavigate.textContent = `${Number(current.textContent)+(12 * (Number(current.textContent)-1)-1)} - ${Number(current.textContent)+(12 * (Number(current.textContent)-1)-1)+12} из 100+ вариантов аренды` ;
+  }
+  
+
+
+
+}
+
+setTimeout(setInterval(()=>a(),10),3000);
+
+
+
+
+
+    

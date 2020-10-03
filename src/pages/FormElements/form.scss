@@ -9,6 +9,9 @@
 @import "./rate.scss";
 @import "./range.scss";
 @import "./buttons.scss";
+@import "./pagnator.scss";
+@import "./paginator.scss";
+@import "./dropDownBad.scss";
 @mixin input{
         @include body;
         color:$DarkShade75;
@@ -32,10 +35,18 @@
 }
 .wrappper{
     display: flex;
+    &:nth-child(n+2){
+        margin-top: 100px;
+    }
 }
-
-.formSection,.wrapperButtons{
-    width: 320px;
+.formSection{
+    width: 350px;
+    margin-left: 126px;
+    display: inline-block;
+}
+.wrapperButtons{
+    width: 350px;
+    margin-left: 126px;
     display: inline-block;
 }
 
@@ -240,17 +251,15 @@
         
     }
     &__dropdown{
+        cursor: default;
         position: absolute;
         background-color: #fff;
-        cursor: pointer;
-        border: .5px solid #d3d3d3;
+        
+        border: .5px solid $DarkShade50;
         &__option {
             margin: 0;
             padding: 5px;
-            &:hover{
-                color: #fff;
-                background: #39f;
-            }
+           
             
             
         }

@@ -5,7 +5,7 @@ include ../../components/mixinForms.pug
         
         +textfield("Text Field","Email","default")
         +textfield("Text Field","This is pretty awesome","hover / focus")
-        +dropDown("dropdown","default","1","2")
+        +dropDown("dropdown","default","my-select","form","1","2")
         +masked("masked text field")
         +dateDropdown("date dropdown")
         +filterDate("filter date dropdown")
@@ -45,12 +45,19 @@ include ../../components/mixinForms.pug
                     button(class="button button_ease button_active_ease ")="CLICK ME"
                 .wrapOne
                     button(class="button button_filled button_filled_long ")="перейти к оплате "
-                        div(class="button__arrow")
-                
+                        div(class="button_filled_long_right")   
+                           
+
+
+        .checkboxSection
+            div(id ="demo")    
+            span(id="paginatorNavigate" class="paginator__navigate")  
         
                
-                    
-
+.wrappper
+    .formSection
+        +dropDown("dropdown","default","my-select2","form forBed","Спальни","Кровати","Ванныекомнаты")
+               
                 
 
           

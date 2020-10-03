@@ -1,0 +1,9 @@
+@import "../../components/mixins.scss";
+@import "../../components/variables.scss";
+
+
+.paginator__navigate{
+    @include body;
+    margin-top: 11.56px;
+    color:$DarkShade75;
+}

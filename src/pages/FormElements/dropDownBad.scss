@@ -1,0 +1,42 @@
+@import "../../components/mixins.scss";
+@import "../../components/variables.scss";
+
+.selectGroup{
+    position: relative;
+}
+.form__dropdown{
+    top: 43px;
+    width: 320px;
+}
+.form__dropdown__option{
+    display: flex;
+    justify-content: space-between;
+}
+.optionMines, .optionPlus{
+   
+    width: 30px;
+    height: 30px;
+    border: 1px solid $DarkShade25;
+    border-radius: 22px;
+    color:$DarkShade50 ;
+    font-size: 12px;
+}
+
+.btnMinesZero{
+    opacity: 0.4;
+}
+.wrapSelectOption{
+    width: 92px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.optionNumberOf,.form__dropdown__option{
+    @include h3;
+}
+.form__select__item{
+    @include body;
+}
+.form__dropdown{
+    border: 1px solid $DarkShade50 ;
+}
